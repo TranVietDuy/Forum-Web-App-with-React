@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import {Switch, Route} from 'react-router-dom'
+import GlobalFeed from 'pages/globalFeed'
+import Article from 'pages/article'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+        <Switch>
+            <Route path="/" component={GlobalFeed} exact />
+            <Route path="/articles/:slug" component={Article} />
+        </Switch>
+    )
 }
 
-export default App;
+export default App
